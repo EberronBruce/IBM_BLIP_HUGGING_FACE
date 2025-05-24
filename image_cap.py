@@ -18,8 +18,9 @@ inputs = processor(images=image, text=text, return_tensors="pt")
 # Generate a caption for the image
 outputs = model.generate(**inputs, max_length=50)
 
-#Decod the generated tokens to text
+#Decode the generated tokens to text
 caption = processor.decode(outputs[0], skip_special_tokens=True)
 
 #print the caption
 print(caption)
+
